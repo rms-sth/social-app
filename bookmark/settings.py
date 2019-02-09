@@ -106,3 +106,13 @@ from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
+
+
+#Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ramesrestt@gmail.com'
+EMAIL_HOST_PASSWORD = 'gitadevi1'
+EMAIL_HOST_PORT = 587
+EMAIL_USE_TLS = True
