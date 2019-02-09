@@ -14,6 +14,7 @@
         {{ form.as_p }}
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ next }}">
+        <p><a href="{% url 'password_change' %}">Forget Password?</a></p>
         <p><input type="submit" value="Log-in"></p>
     </form>
 </div>

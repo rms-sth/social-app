@@ -1,10 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth import login, authenticate
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
 
-#TODO I need to commplete this views
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
