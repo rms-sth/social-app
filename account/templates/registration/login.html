@@ -8,6 +8,7 @@
 <p>Your username and password didn't matched. Please try again</p>
 {% else %}
 <p>Please, fill up the form to login</p>
+<p>If you dont have an account you can <a href="{% url 'register' %}">Register</a></p>
 {% endif %}
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
@@ -18,4 +19,14 @@
     </form>
     <p><a href="{% url 'password_reset' %}">Forget Password?</a></p>
 </div>
+
+
+<div class="social">
+    <ul>
+        <li class="facebook"><a href="{% url 'social:begin' 'facebook' %}"> Login with Facebook </a></li>
+        <li class="twitter"><a href="{% url 'social:begin' 'twitter' %}"> Login with Twitter </a></li>
+        <li class="google"><a href="{% url 'social:begin' 'google-oauth2' %}"> Login with Google </a></li>
+    </ul>
+</div>
+
 {% endblock %}

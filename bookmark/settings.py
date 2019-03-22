@@ -36,9 +36,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'account',
     'django.contrib.admin', #it must come after account app
+    'social.apps.django_app.default',
+    'django_extensions',
 )
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -102,6 +106,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#For uploading images
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
 from django.core.urlresolvers import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
@@ -116,3 +125,24 @@ EMAIL_HOST_USER = 'ramesrestt@gmail.com'
 EMAIL_HOST_PASSWORD = 'gitadevi1'
 EMAIL_HOST_PORT = 587
 EMAIL_USE_TLS = True
+
+
+AUTHENTICATION_BACKENDS = (
+    #The below listed backend order matters. If same credentials are valid for multiple backends
+    # django will stop at the first backend that successfully authenticate the user
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+
+
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+)
+
+#Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '2216161615142799'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a83a5fb8230b1baf9375665b9f0abe50 '
+
+#Twitter
+SOCIAL_AUTH_TWITTER_KEY = ''
+SOCIAL_AUTH_TWITTER_SECRET = ''
