@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'django_extensions',
     'images',
+    'sorl.thumbnail',
 )
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
