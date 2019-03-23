@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.admin', #it must come after account app
     'social.apps.django_app.default',
     'django_extensions',
+    'images',
 )
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
@@ -122,7 +123,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ramesrestt@gmail.com'
-EMAIL_HOST_PASSWORD = 'gitadevi1'
+EMAIL_HOST_PASSWORD = 'rameshramesh123'
 EMAIL_HOST_PORT = 587
 EMAIL_USE_TLS = True
 
